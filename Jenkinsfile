@@ -12,9 +12,10 @@ pipeline {
            sh 'bundle install'
         }
     }
-            stage('Test'){
+        stage('Test'){
 		steps{
 		   echo 'Running regression tests'
+		   sh 'bundle exec cucumber -p ci'
         }
     }
 	    stage('UAT'){
