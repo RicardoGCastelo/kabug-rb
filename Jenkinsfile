@@ -9,7 +9,8 @@ pipeline {
 	    stage('Build'){
 		steps{
 		   echo 'Building or Resolve Dependencies!'
-           sh 'bundle install'
+           sh 'rm -f Gemfile.lock'
+		   sh 'bundle install'
         }
     }
         stage('Test'){
